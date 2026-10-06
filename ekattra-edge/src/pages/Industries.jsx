@@ -28,7 +28,7 @@ export default function Industries() {
               </article>
             ))}
           </div>
-          <Link className="btn" to="/contact">Start a conversation</Link>
+          <Link className="btn" to="/contact">Start a conversation!Testing CICD</Link>
         </div>
       </section>
     </>

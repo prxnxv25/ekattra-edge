@@ -20,9 +20,13 @@ export default function Layout() {
       <header className="nav">
         <Link to="/" className="brand">Ekattra <span>Edge</span></Link>
         <nav aria-label="Main">
-          {links.map(([to, label]) => (
+          {/* {links.map(([to, label]) => (
             <NavLink key={to} to={to}>{label}</NavLink>
-          ))}
+          ))} */}
+            <Link to="/about">About</Link>
+            <Link to="/services">Services</Link>
+            <Link to="/industries">Who we work with</Link>
+            <Link to="/contact">Contact</Link>
         </nav>
       </header>
       <main id="main"><Outlet /></main>
