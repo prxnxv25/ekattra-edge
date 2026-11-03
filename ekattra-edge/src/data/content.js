@@ -1,65 +1,93 @@
+import { CONTACT, STEPS } from '../content.js'
+
 export const company = {
   name: 'Ekattra Edge',
   descriptor: 'A storytelling company',
-  tagline: 'Content. Context. Conversation.',
-  intro: 'Every brand carries a story, in its people, its product, its history, or a moment nobody planned for. Ekattra exists to find that story, shape it with intent, and place it where it can actually be heard.',
-  closing: 'Nothing in isolation. Everything adds to the story.',
-  location: 'Delhi, India',
-  email: 'ekattragroup@gmail.com',
-  phone: '+91-9811405222',
+  tagline: 'Building brands through credibility and compelling stories.',
+  intro: 'A strong brand needs both the authority of earned communication and the precision of paid storytelling.',
+  closing: 'Visibility creates an opportunity. Credibility gives it value.',
+  location: CONTACT.city,
+  email: CONTACT.email,
+  phone: CONTACT.phone,
+  phoneHref: CONTACT.phoneHref,
 }
 
 export const story = {
-  heading: 'Every brand has a story.',
-  body: "Sometimes it's waiting to be told. Sometimes it's buried in years of experience, tucked away in a product, sitting in a founder's belief, hiding in data, or emerging from a moment nobody saw coming.",
-  turn: ['Finding that story is one thing.', 'Making it matter is another.'],
-  outcomes: ['Noticed.', 'Understood.', 'Remembered.'],
-  promise: 'We bring together content, context, and conversation to help brands tell stories that build, rather than fade.',
+  heading: 'Attention is easy to buy. Trust is harder to earn.',
+  body: 'Brands compete in an environment of constant messages, fragmented audiences and shrinking attention.',
+  turn: [
+    'The challenge is not simply to say more.',
+    'It is to make every brand story count.',
+  ],
+  outcomes: ['Be seen', 'Be believed', 'Be understood', 'Be remembered'],
+  promise: 'Together: a more consistent, visible and credible brand presence.',
 }
 
 export const pillars = [
-  { name: 'Content', text: 'Turn narratives, ideas, expertise, and experience into content worth spending time with.', tags: ['Articles', 'Films', 'Campaigns', 'Digital experiences'] },
-  { name: 'Context', text: 'Put the right story in the right environment, for the right audience, at the right moment.', tags: ['Platform', 'Audience', 'Timing', 'Relevance'] },
-  { name: 'Conversation', text: 'Create the conditions for stories to be discussed, shared, challenged, and passed on.', tags: ['Participation', 'Sharing', 'Continuity'] },
+  {
+    name: 'Organic | Earn credibility',
+    text: 'Organic engagement is not only about securing coverage. It is about shaping how a brand is understood over time.',
+    tags: [
+      'Build reputation over time',
+      'Create third-party validation',
+      'Shape leadership and category conversations',
+      'Stay present beyond campaign moments',
+    ],
+  },
+  {
+    name: 'Branded content | Scale the story',
+    text: 'Branded content empowers brands to tell deeper stories, connect with precisely defined audiences, and shape the narrative through greater control over context and timelines.',
+    tags: [
+      'Control the narrative and format',
+      'Reach clearly defined audiences',
+      'Give important stories visibility',
+      'Extend the life of campaigns and content',
+    ],
+  },
 ]
 
 export const approach = {
-  heading: "We don't start with a format. We start with the story.",
-  body: 'Then we find the right way to tell it, the right place to put it, and the right conditions to let it grow.',
-  dots: ['Business', 'People', 'Products', 'History', 'Ambitions', 'Customers', 'Culture'],
-  connect: 'We connect them, looking for the unexpected link, the overlooked insight, or the human angle that turns information into a narrative worth engaging with.',
-  note: 'Experience is cumulative. So are ideas, relationships, insights, and stories.',
+  heading: 'The opportunity lies in discovering what is meaningful, shaping it with intent and choosing the right way to tell it.',
+  body: 'Every engagement begins with the business objective, not a predetermined format.',
+  dots: ['Find', 'Shape', 'Amplify'],
+  connect: 'Our role: turn brand intent into stories which people can understand, trust and remember.',
+  note: 'A disciplined process. A story-led mindset.',
   questions: [
-    "What's worth saying?",
-    'Who needs to hear it?',
-    'Where will it have meaning?',
-    'What could it make people talk about?',
-    'How does this add to the larger story of the brand?',
+    'What does the brand need to achieve?',
+    'Who needs to hear the story?',
+    'What should people understand and believe?',
+    'Which formats and channels fit?',
+    'What can we learn and improve next?',
   ],
 }
 
 export const disciplines = [
-  { tag: 'Lead', name: 'Branded Content', text: "Bespoke articles, films, and campaigns that bring a brand's story to life.",
-    items: ['Branded articles & bylines', 'Corporate / brand films', 'Founder narrative & personal branding', 'Case studies / podcast / audio content', 'ESG / sustainability storytelling'] },
-  { tag: 'Campaigns', name: 'Story-led Campaigns', text: 'Ideas that bring multiple pieces of content together around one larger narrative.',
-    items: ['Product / brand launch campaigns', 'Milestone campaigns: funding, anniversaries, expansions', 'Repositioning / rebrand narratives'] },
-  { tag: 'Placement', name: 'Context & Distribution', text: 'Finding the right platforms, environments, audiences, and moments for a story to live.',
-    items: ['Media relations & press placement', 'Regulatory and policy communications', 'Crisis and issue management', 'Investor & stakeholder communications'] },
-  { tag: 'Engagement', name: 'Conversation', text: 'Content and experiences built to invite participation, discussion, and reinterpretation.',
-    items: ['Executive thought-leadership: LinkedIn, bylines, panels', 'Social media strategy & community management'] },
+  {
+    tag: '01',
+    name: 'Strategic Organic Media Engagement',
+    text: 'Organic engagement is not only about securing coverage. It is about shaping how a brand is understood over time.',
+    items: [
+      'Media relations: Proactive outreach, journalist engagement, interviews and briefings.',
+      'Leadership positioning: Founder and executive profiling, bylines and speaking opportunities.',
+      'Thought leadership: Industry perspectives, expert commentary and point-of-view development.',
+      'Corporate storytelling: Company milestones, launches, partnerships, expansion and impact.',
+      'Issues & reputation: Preparedness, response planning and sensitive communication.',
+      'Stakeholder communications: Narratives for investors, partners, employees and wider audiences.',
+    ],
+  },
+  {
+    tag: '02',
+    name: 'Strategic Branded Content',
+    text: 'Branded content empowers brands to tell deeper stories, connect with precisely defined audiences, and shape the narrative through greater control over context and timelines.',
+    items: [
+      'Branded articles: Editorial-style stories, sponsored features and explainers.',
+      'Founder & leader stories: Profiles, interviews and paid thought-leadership placements.',
+      'Brand & corporate films: Films that bring purpose, people and business stories to life.',
+      'Video & social content: Platform-native content built around audience behaviour.',
+      'Podcasts & audio: Conversations and audio formats that create depth and connection.',
+      'Content amplification: Paid distribution through relevant publisher and digital ecosystems.',
+    ],
+  },
 ]
 
-export const sectors = [
-  'Financial Services, Fintech & Venture Capital',
-  'Infrastructure, Sustainability & Green Financing',
-  'Consumer Brands & Lifestyle',
-  'Technology & Digital Platforms',
-  'Policy, Institutions & Thought Leadership',
-]
-export const sectorNote = 'We partner with brands and founders where narrative complexity demands clarity and craft.'
-
-export const engagements = [
-  { name: 'Retainer partnership', line: 'Ongoing narrative development', text: 'For brands building a story over time.' },
-  { name: 'Project-based', line: 'Campaigns & specific mandates', text: 'For launches, milestones, repositioning, or defined communication needs.' },
-  { name: 'Fractional', line: 'Strategic guidance', text: 'For teams that need senior storytelling counsel without a full-time structure.' },
-]
+export const workflow = STEPS

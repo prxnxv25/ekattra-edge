@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { company, story, pillars, sectors } from '../data/content.js'
+import { company, story, pillars } from '../data/content.js'
 
 export default function Home() {
   return (
@@ -46,15 +46,8 @@ export default function Home() {
       </section>
 
       <section className="dark">
-        <div className="wrap split">
+        <div className="wrap">
           <h2>{story.promise}</h2>
-          <div>
-            <p className="dark-label">We work with</p>
-            <ul className="plain">
-              {sectors.map((s) => <li key={s}>{s}</li>)}
-            </ul>
-            <Link className="btn light" to="/industries">How we engage</Link>
-          </div>
         </div>
       </section>
     </>

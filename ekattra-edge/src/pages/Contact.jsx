@@ -12,7 +12,7 @@ export default function Contact() {
       <dl className="details">
         <div><dt>Based in</dt><dd>{company.location}</dd></div>
         <div><dt>Email</dt><dd><a href={`mailto:${company.email}`}>{company.email}</a></dd></div>
-        <div><dt>Phone</dt><dd><a href={`tel:${company.phone.replace(/-/g, '')}`}>{company.phone}</a></dd></div>
+        <div><dt>Phone</dt><dd><a href={company.phoneHref}>{company.phone}</a></dd></div>
       </dl>
       <a className="btn" href={`mailto:${company.email}?subject=Let's talk story`}>Email Ekattra Edge</a>
     </section>

@@ -4,8 +4,8 @@ export default function Services() {
   return (
     <>
       <section className="wrap page-head">
-        <h1>Where the work happens</h1>
-        <p className="lead">Four interconnected disciplines. Each one supports the others, so a story keeps building after it is first told.</p>
+        <h1>Two complementary ways to build brand value</h1>
+        <p className="lead">Strategic organic media engagement builds reputation over time. Strategic branded content expands reach with greater control over story, context and audience.</p>
       </section>
 
       <section className="wrap">

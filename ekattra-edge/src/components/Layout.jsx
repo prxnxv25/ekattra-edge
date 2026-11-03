@@ -5,7 +5,6 @@ import { company } from '../data/content.js'
 const links = [
   ['/about', 'About'],
   ['/services', 'Services'],
-  ['/industries', 'Who we work with'],
   ['/contact', 'Contact'],
 ]
 
@@ -25,7 +24,6 @@ export default function Layout() {
           ))} */}
             <Link to="/about">About</Link>
             <Link to="/services">Services</Link>
-            <Link to="/industries">Who we work with</Link>
             <Link to="/contact">Contact</Link>
         </nav>
       </header>
@@ -36,7 +34,7 @@ export default function Layout() {
           <p>{company.tagline}</p>
           <p>{company.location}</p>
           <p><a href={`mailto:${company.email}`}>{company.email}</a></p>
-          <p><a href={`tel:${company.phone.replace(/-/g, '')}`}>{company.phone}</a></p>
+          <p><a href={company.phoneHref}>{company.phone}</a></p>
         </div>
       </footer>
     </>

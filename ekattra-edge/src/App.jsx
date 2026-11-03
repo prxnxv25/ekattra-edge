@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
-import { CONTACT, NAV, PILLARS, PREMISE, SECTORS, STEPS } from "./content.js";
+import { CONTACT, CONTENT_CAPABILITIES, NAV, ORGANIC_CAPABILITIES, OUTCOMES, PILLARS, PREMISE, RHYTHM, STEPS } from "./content.js";
 import { scrollToId, setScrollLocked, useActiveIndex, useDarkSection, useNavState, useReveal, useScrub, useSmoothScroll } from "./hooks.js";
 import { sceneState } from "./three/store.js";
 
@@ -50,7 +50,7 @@ function Nav() {
 function Hero() {
   return (
     <section className="hero" data-stage id="top">
-      <p className="eyebrow hero-meta"><span className="dot" />A storytelling company · {CONTACT.city}</p>
+      <p className="eyebrow hero-meta"><span className="dot" />Organic media + branded content · {CONTACT.city}</p>
       <h1 className="hero-title">
         {["Content.", "Context.", "Conversation."].map((w, i) => (
           <span key={w} className={`line ${i === 1 ? "it" : ""}`} style={{ "--d": `${0.15 + i * 0.12}s` }}><span>{w}</span></span>
@@ -58,8 +58,9 @@ function Hero() {
       </h1>
       <div className="hero-foot">
         <p className="lead">
-          Every brand carries a story — in its people, its product, its history, or a moment nobody planned for.
-          Ekattra exists to <em>find</em> that story, <em>shape</em> it with intent, and <em>place</em> it where it can actually be heard.
+          Every brand has a story.<br />
+          Not every story finds its audience.<br />
+          Building brands through credibility and compelling stories.
         </p>
         <div className="ctas">
           <Link to="contact" className="btn btn-solid">Talk to us about your story <span aria-hidden>→</span></Link>
@@ -78,16 +79,16 @@ function Premise() {
   return (
     <section className="premise section" data-stage id="about">
       <SectionHead n={0} label="The premise" />
-      <h2 className="display" data-reveal>Every brand has a story.</h2>
+      <h2 className="display" data-reveal>Attention is easy to buy.<br /><em>Trust is harder to earn.</em></h2>
       <p className="scrub" ref={ref}>
         {words.map((w, i) => <span key={i} className={i / words.length < p ? "lit" : ""}>{w} </span>)}
       </p>
       <div className="premise-turn" data-reveal>
-        <p>Finding that story is one thing.</p>
-        <p><em>Making it matter is another.</em></p>
+        <p>The challenge is not simply to say more.</p>
+        <p><em>It is to make every brand story count.</em></p>
       </div>
-      <ul className="triplet" aria-label="What a story should be">
-        {["Noticed", "Understood", "Remembered"].map((w, i) => (
+      <ul className="triplet" aria-label="What a brand needs">
+        {["Visibility", "Credibility", "Relevance"].map((w, i) => (
           <li key={w} data-reveal style={{ "--d": `${i * 0.1}s` }}>{w}<span className="accent">.</span></li>
         ))}
       </ul>
@@ -113,7 +114,7 @@ function Pillars() {
   return (
     <section className="pillars section" data-stage id="services">
       <SectionHead n={1} label="What we do" />
-      <h2 className="display" data-reveal>Three pillars,<br /><em>one story.</em></h2>
+      <h2 className="display" data-reveal>Two disciplines.<br /><em>One connected story.</em></h2>
       <ol className="pillar-list">
         {PILLARS.map((p, i) => (
           <li key={p.name} ref={(el) => (refs.current[i] = el)} className="pillar" data-active={active === i || undefined} data-reveal>
@@ -127,29 +128,24 @@ function Pillars() {
         ))}
       </ol>
       <p className="pillar-close" data-reveal>
-        We bring together content, context, and conversation to help brands tell stories that <em>build</em>, rather than fade.
+        Organic engagement earns credibility. Branded content scales the story. Together, they create a more consistent and trusted brand presence.
       </p>
+      <div className="capability-groups">
+        <CapabilityGroup title="01 / Strategic organic media engagement" items={ORGANIC_CAPABILITIES} />
+        <CapabilityGroup title="02 / Strategic branded content" items={CONTENT_CAPABILITIES} />
+      </div>
     </section>
   );
 }
 
-function Sectors() {
+function CapabilityGroup({ title, items }) {
   return (
-    <section className="sectors section" data-stage id="sectors">
-      <SectionHead n={2} label="Who we work with" />
-      <h2 className="display" data-reveal>Stories from five<br /><em>kinds of ambition.</em></h2>
-      <ul className="sector-list">
-        {SECTORS.map((s, i) => (
-          <li key={s} data-reveal style={{ "--d": `${i * 0.06}s` }}>
-            <Link to="contact" className="sector">
-              <span className="sector-n">{pad(i)}</span>
-              <span className="sector-name">{s}</span>
-              <span className="sector-arrow" aria-hidden>→</span>
-            </Link>
-          </li>
-        ))}
+    <div className="capability-group" data-reveal>
+      <h3 className="eyebrow">{title}</h3>
+      <ul className="capability-list">
+        {items.map((item) => <li key={item.name}><strong>{item.name}</strong><span>{item.line}</span></li>)}
       </ul>
-    </section>
+    </div>
   );
 }
 
@@ -180,6 +176,24 @@ function Engage() {
           </li>
         ))}
       </ol>
+      <h3 className="eyebrow rhythm-heading" data-reveal>Consistency builds familiarity. Relevance builds credibility.</h3>
+      <p className="rhythm-intro" data-reveal>Our media engagement rhythm stays active between the moments that matter.</p>
+      <ul className="rhythm">
+        {RHYTHM.map((r, i) => <li key={r.name} data-reveal style={{ "--d": `${i * 0.06}s` }}><strong>{r.name}</strong><span>{r.line}</span></li>)}
+      </ul>
+    </section>
+  );
+}
+
+function Outcomes() {
+  return (
+    <section className="outcomes section" data-stage id="outcomes">
+      <SectionHead n={4} label="The value for brands" />
+      <h2 className="display" data-reveal>From being visible<br /><em>to being valued.</em></h2>
+      <ul className="outcome-list">
+        {OUTCOMES.map((o, i) => <li key={o.name} data-reveal style={{ "--d": `${i * 0.08}s` }}><span>{pad(i)}</span><div><h3>{o.name}</h3><p>{o.line}</p></div></li>)}
+      </ul>
+      <p className="pillar-close" data-reveal>Visibility creates an opportunity. <em>Credibility gives it value.</em></p>
     </section>
   );
 }
@@ -189,13 +203,13 @@ function Contact() {
   useDarkSection(ref);
   return (
     <section className="contact section" data-stage id="contact" ref={ref}>
-      <SectionHead n={4} label="Contact" />
-      <h2 className="contact-title" data-reveal>Got a story?<br /><em>Let's find it, together.</em></h2>
+      <SectionHead n={5} label="Contact" />
+      <h2 className="contact-title" data-reveal>Let's build<br /><em>a story that matters.</em></h2>
       <a className="contact-mail" href={`mailto:${CONTACT.email}`} data-reveal>{CONTACT.email}<span aria-hidden>↗</span></a>
       <div className="contact-meta" data-reveal>
         <div><span className="eyebrow">Call</span><a href={CONTACT.phoneHref}>{CONTACT.phone}</a></div>
-        <div><span className="eyebrow">Studio</span><span>{CONTACT.city}</span></div>
-        <div><span className="eyebrow">Say</span><span>Content. Context. Conversation.</span></div>
+        <div><span className="eyebrow">Location</span><span>{CONTACT.city}</span></div>
+        <div><span className="eyebrow">Also reach us</span><a href={`mailto:${CONTACT.infoEmail}`}>{CONTACT.infoEmail}</a></div>
       </div>
       <footer className="foot">
         <span>© {new Date().getFullYear()} Ekattra Edge</span>
@@ -219,9 +233,9 @@ export default function App() {
         <Hero />
         <Premise />
         <Pillars />
-        <Sectors />
         <Marquee />
         <Engage />
+        <Outcomes />
         <Contact />
       </main>
     </>
