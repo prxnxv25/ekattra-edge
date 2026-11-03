@@ -36,7 +36,10 @@ function Nav() {
   return (
     <>
       <header className={`nav ${hidden && !open ? "is-hidden" : ""} ${scrolled && !open ? "is-scrolled" : ""}`}>
-        <Link to="top" className="logo" onClick={() => setOpen(false)}>Ekattra <em>Edge</em></Link>
+        <Link to="top" className="logo" onClick={() => setOpen(false)}>
+          <span className="logo-name">Ekattra <em>Edge</em></span>
+          <span className="logo-tagline">A Story Telling Company</span>
+        </Link>
         <nav className="nav-links" aria-label="Primary">{links}</nav>
         <button className="menu-btn" aria-expanded={open} aria-controls="menu-sheet" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}>
           <span /><span />
@@ -50,7 +53,7 @@ function Nav() {
 function Hero() {
   return (
     <section className="hero" data-stage id="top">
-      <p className="eyebrow hero-meta"><span className="dot" />Organic media + branded content · {CONTACT.city}</p>
+      <p className="eyebrow hero-meta"><span className="dot" />Organic media · branded content · And Beyond</p>
       <h1 className="hero-title">
         {["Content.", "Context.", "Conversation."].map((w, i) => (
           <span key={w} className={`line ${i === 1 ? "it" : ""}`} style={{ "--d": `${0.15 + i * 0.12}s` }}><span>{w}</span></span>
